@@ -1,0 +1,11 @@
+.childDiv{
+    border:black;
+    border:solid;
+    height: 3vh;
+    width: 3vh;
+    background-color: rgb(255, 155, 155);
+}
+
+#row{
+    display: flex;
+}
