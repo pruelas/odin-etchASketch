@@ -3,12 +3,11 @@
 btn.addEventListener('click', function (e) {
 
     const parentDiv = document.getElementById("grid");
-    console.log(parentDiv);
-    for(var i = 0; i < 16; i++){
+    for(var i = 0; i < 32; i++){
         const childRow = document.createElement("div");
         childRow.id = "row";
         parentDiv.appendChild(childRow);
-        for(var j = 0; j < 16; j++){
+        for(var j = 0; j < 32; j++){
             const childDiv = document.createElement("div");
             childDiv.classList = "childDiv";
             childDiv.id = "child" + i;
@@ -18,6 +17,10 @@ btn.addEventListener('click', function (e) {
 
 });
 
-childDiv.addEventListener('hover', function (e) {
-    var selectedTile = e.target.nodeName;
+var etchASketchTiles = document.getElementById("grid");
+etchASketchTiles.addEventListener('mouseover', function (e) {
+    var selectedTile = e.target.id;
+    if(e.target.className == "childDiv"){
+        e.target.style.backgroundColor = 'black';
+    }
 });

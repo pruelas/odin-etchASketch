@@ -1,11 +1,23 @@
 .childDiv{
     border:black;
     border:solid;
-    height: 3vh;
-    width: 3vh;
     background-color: rgb(255, 155, 155);
+    flex-grow: 1;
 }
 
 #row{
+    
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#grid{
+    max-height: 1000px;
+    min-height: 1000px;
+    max-width: 1000px;
+    min-width: 1000px;
+    display: flex;
+    flex-direction: column;
+
 }
