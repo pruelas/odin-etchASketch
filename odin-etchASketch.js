@@ -22,15 +22,22 @@ btns.forEach(btn => btn.addEventListener('click', function (e) {
 
     const parentDiv = document.getElementById("grid");
     const clearBtn = document.getElementById("clearBtn");
+    const startBtn = document.getElementById("startBtn");
     if(e.target.textContent == "Start Grid!"){
+        startBtn.style.display ="none";
         generateGrid(16, parentDiv);
         clearBtn.style.display = "initial";
     }else{
-        console.log(e);
         while(parentDiv.hasChildNodes()){
             parentDiv.removeChild(parentDiv.lastChild);
         }
-        generateGrid(64, parentDiv);
+        
+        var newSize = prompt("Pleasae enter the number of squares per side for the new grid(Maximum limit 100): ");
+        while(newSize > 100){
+            newSize = prompt("You have exceeded  the limit! Please enter a number less than 100:");
+        }
+
+        generateGrid(newSize, parentDiv);
     }
     /*
     for(var i = 0; i < 32; i++){
